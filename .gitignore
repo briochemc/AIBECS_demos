@@ -1,0 +1,6 @@
+src/tikz/*.aux
+src/tikz/*.fdb_latexmk
+src/tikz/*.fls
+src/tikz/*.log
+src/tikz/*.pdf
+src/tikz/*.synctex.gz

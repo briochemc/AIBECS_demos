@@ -12,8 +12,15 @@
 
 #nb # %% {"slideshow": {"slide_type": "fragment"}}
 # <img src="https://pbs.twimg.com/profile_images/1829321548/ess_logo_400x400.png" width=10% align=right>
+# <img src="https://user-images.githubusercontent.com/4486578/61599460-6d32c500-ac6c-11e9-9796-0b8892f0342d.png" width=10% align=left>
 #
-# A Julia package developed by Benoît Pasquier at the Department of Earth System Sciences, University of California, Irvine
+# <center>A <b>Julia</b> package developed by <b>Benoît Pasquier</b> at the Department of Earth System Sciences, <b>UCI</b></center>
+
+
+#nb # %% {"slideshow": {"slide_type": "subslide"}}
+# <img src="https://user-images.githubusercontent.com/4486578/61604286-497b7900-ac84-11e9-8d8e-4cd2a475af82.png" width=100%>
+
+
 
 
 
