@@ -1,0 +1,4 @@
+name = "AIBECS_demos"
+uuid = "8ed025cc-ac0d-11e9-3319-afefedd45a98"
+authors = ["Benoit Pasquier <pasquieb@uci.edu>"]
+version = "0.1.0"
