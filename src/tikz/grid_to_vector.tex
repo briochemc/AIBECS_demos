@@ -1,0 +1,111 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{tikz}
+% Three counters
+\newcounter{x}
+\newcounter{y}
+\newcounter{z}
+
+% The angles of x,y,z-axes
+\newcommand\xaxis{210}
+\newcommand\yaxis{-30}
+\newcommand\zaxis{90}
+
+\definecolor{julia_blue}  {rgb}{0.251, 0.388, 0.847}
+\definecolor{julia_purple}{rgb}{0.584, 0.345, 0.698}
+\definecolor{julia_green} {rgb}{0.22 , 0.596, 0.149}
+\definecolor{julia_red}   {rgb}{0.796, 0.235, 0.2  }
+
+
+% The top side of a cube
+\newcommand\topside[5]{
+    \fill[fill=#4, fill opacity=#5, draw=black,shift={(\xaxis:#1)},shift={(\yaxis:#2)},
+  shift={(\zaxis:#3)}] (0,0) -- (30:1) -- (0,1) --(150:1)--(0,0);
+}
+
+% The left side of a cube
+\newcommand\leftside[5]{
+  \fill[fill=#4, fill opacity=#5, draw=black,shift={(\xaxis:#1)},shift={(\yaxis:#2)},
+  shift={(\zaxis:#3)}] (0,0) -- (0,-1) -- (210:1) --(150:1)--(0,0);
+}
+
+% The right side of a cube
+\newcommand\rightside[5]{
+  \fill[fill=#4, fill opacity=#5, draw=black,shift={(\xaxis:#1)},shift={(\yaxis:#2)},
+  shift={(\zaxis:#3)}] (0,0) -- (30:1) -- (-30:1) --(0,-1)--(0,0);
+}
+
+% The cube 
+\newcommand\cube[5]{
+    \mytopside{#1}{#2}{#3}{#4}{#5} \myleftside{#1}{#2}{#3}{#4}{#5} \myrightside{#1}{#2}{#3}{#4}{#5}
+}
+\newcommand\landcube[3]{
+    \cube{#1}{#2}{#3}{julia_red}{1}
+}
+\newcommand\watercube[3]{
+    \cube{#1}{#2}{#3}{julia_blue}{0.2}
+}
+
+
+
+\newcommand\mytopside[5]{
+    \fill[fill=#4,
+          fill opacity=#5, 
+          draw=black,
+          shift={(\xaxis:#1)},
+          shift={(\yaxis:#2)},
+          shift={(\zaxis:#3)}
+         ]
+        (0,0) -- (15:0.9) -- ++(150:0.7) -- ++(195:0.9) -- (0,0) ;
+}
+
+\newcommand\myleftside[5]{
+    \fill[fill=#4,
+          fill opacity=#5, 
+          draw=black,
+          shift={(\xaxis:#1)},
+          shift={(\yaxis:#2)},
+          shift={(\zaxis:#3)}
+         ]
+        (0,0) -- (150:0.7) -- ++(270:1) -- ++(-30:0.7) -- (0,0);
+}
+
+\newcommand\myrightside[5]{
+    \fill[fill=#4,
+          fill opacity=#5, 
+          draw=black,
+          shift={(\xaxis:#1)},
+          shift={(\yaxis:#2)},
+          shift={(\zaxis:#3)}
+         ]
+        (0,0) -- (270:1) -- ++(15:0.9) -- ++(90:1) -- (0,0);
+}
+
+
+% Definition of \planepartition
+% To draw the following plane partition, just write \planepartition{ {a, b, c}, {d,e} }.
+%  a b c
+%  d e
+\newcommand\planepartition[3]{
+ \setcounter{x}{-1}
+  \foreach \a in {#1} {
+    \addtocounter{x}{1}
+    \setcounter{y}{-1}
+    \foreach \b in \a {
+      \addtocounter{y}{1}
+      \setcounter{z}{-1}
+      \foreach \c in {1,...,\b} {
+        \addtocounter{z}{1}
+        \cube{\value{x}}{\value{y}}{\value{z}}{#2}{#3}
+      }
+    }
+  }
+}
+
+\begin{document} 
+
+\begin{tikzpicture}
+    \planepartition{{1}}{julia_red!50!white}{1}
+    %\planepartition{{2,2},{2,2}}{julia_blue}{0.2}
+\end{tikzpicture}
+
+\end{document}

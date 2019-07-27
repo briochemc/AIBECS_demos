@@ -3,4 +3,6 @@ src/tikz/*.fdb_latexmk
 src/tikz/*.fls
 src/tikz/*.log
 src/tikz/*.pdf
+src/tikz/*.svg
+src/tikz/*.png
 src/tikz/*.synctex.gz
