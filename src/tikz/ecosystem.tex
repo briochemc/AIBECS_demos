@@ -21,21 +21,17 @@
 
 \node [concept, fill=white] (AIBECS) {}
 child [concept color=julia_purple!40, sibling angle=170] { node [concept] {Observational Data}
-    child [concept color=julia_red!40!white] { node [concept] {GEO-\\TRACES}
-        child { node [concept] {Iron}}
-        child { node [concept] {Cobalt}}
-        child { node [concept] {Zink}}
+    child [concept color=julia_red!40!white, sibling angle=40] { node [concept] {GEO-\\TRACES}
     }
-    child [concept color=julia_red!40!white] { node [concept] {BCO-DMO}
-        child { node [concept] {PON}}
-        child { node [concept] {POP}}
-        child { node [concept] {POC}}
+    child [concept color=julia_red!40!white, sibling angle=40] { node [concept] {BCO-DMO}
     }
-    child [concept color=julia_green!40] { node [concept] {World Ocean Atlas}
-        child { node [concept] {O\textsubscript{2}}}
-        child { node [concept] {PO\textsubscript{4}}}
-        child { node [concept] {NO\textsubscript{3}}}
-        child { node [concept] {Si(OH)\textsubscript{4}}}
+    child [concept color=julia_red!40!white, sibling angle=40] { node [concept] {CMAP}
+    }
+    child [concept color=black, sibling angle=40] { node [concept, fill=julia_green!40] {World Ocean Atlas}
+        child [concept color=julia_green!40] { node [concept] {O\textsubscript{2}}}
+        child [concept color=julia_green!40] { node [concept] {PO\textsubscript{4}}}
+        child [concept color=julia_green!40] { node [concept] {NO\textsubscript{3}}}
+        child [concept color=julia_green!40] { node [concept] {Si(OH)\textsubscript{4}}}
     }
 }
 child [concept color=julia_purple!40] { node [concept] {Ocean Circulations}
@@ -53,7 +49,7 @@ child [concept color=julia_purple!40] { node [concept] {Ocean Circulations}
 }
 child [concept color=julia_purple!40, sibling angle=-100] { node [concept] {Optimization}
     child [concept color=julia_green!40] { node [concept] {Optim}}
-    child [concept color=julia_green!40] { node [concept] {F1Method}}
+    child [concept color=black] { node [concept, fill = julia_green!40] {F1Method}}
 }
 ;
 
